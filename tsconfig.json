@@ -2,7 +2,10 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2015",
+        "strict": true,
         "noImplicitAny": false,
+        "alwaysStrict": true,
+        "allowSyntheticDefaultImports": true,
         "sourceMap": true
     }
 }

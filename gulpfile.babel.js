@@ -1,7 +1,8 @@
 import gulp from 'gulp';
 import path from 'path';
-import webpack from 'webpack-stream';
-import * as webpackConfig from './webpack.config.js';
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
+import webpackConfig from './webpack.config.babel.js';
 
 const config= {
     dirs: {
@@ -24,7 +25,7 @@ gulp.task('build:vendor', () => {
 });
 gulp.task('build:js', () => {
     gulp.src(path.join(config.dirs.src, 'js', '**', '*'))
-        .pipe(webpack(webpackConfig))
+        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest(path.join(config.dirs.dest, 'assets', 'js')));
 });
 gulp.task('build', ['build:vendor', 'build:static', 'build:js']);
