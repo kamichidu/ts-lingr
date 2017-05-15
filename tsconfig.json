@@ -1,11 +1,15 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2015",
+        "moduleResolution": "Node",
         "target": "es2015",
         "strict": true,
         "noImplicitAny": false,
         "alwaysStrict": true,
+        "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "allowJs": true,
+        "checkJs": true
     }
 }

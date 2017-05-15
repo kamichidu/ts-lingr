@@ -18,15 +18,23 @@ const config= {
     },
     module: {
         rules: [{
-            test: /\.ts$/,
-            use: ['babel-loader', 'vue-ts-loader'],
-            exclude: /node_modules/,
-        }, {
             test: /\.vue$/,
             use: ['babel-loader', {
                 loader: 'vue-loader',
                 options: {
-                    js: 'vue-ts-loader',
+                    loaders: {
+                        ts: 'ts-loader',
+                    },
+                    esModule: true,
+                },
+            }],
+            exclude: /node_modules/,
+        }, {
+            test: /\.ts$/,
+            use: ['babel-loader', {
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
                 },
             }],
             exclude: /node_modules/,
