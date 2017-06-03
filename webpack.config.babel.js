@@ -22,9 +22,6 @@ const config= {
             use: ['babel-loader', {
                 loader: 'vue-loader',
                 options: {
-                    loaders: {
-                        ts: 'ts-loader',
-                    },
                     esModule: true,
                 },
             }],
@@ -33,9 +30,6 @@ const config= {
             test: /\.ts$/,
             use: ['babel-loader', {
                 loader: 'ts-loader',
-                options: {
-                    appendTsSuffixTo: [/\.vue$/],
-                },
             }],
             exclude: /node_modules/,
         }],
