@@ -22,6 +22,9 @@ const config= {
             use: ['babel-loader', {
                 loader: 'vue-loader',
                 options: {
+                    // This loaders option actually makes no sense because
+                    // we use external scripts rather than embedded ones.
+                    // We leave it to clarify what types we use for external scripts.
                     loaders: {
                         ts: 'ts-loader',
                     },
@@ -33,9 +36,6 @@ const config= {
             test: /\.ts$/,
             use: ['babel-loader', {
                 loader: 'ts-loader',
-                options: {
-                    appendTsSuffixTo: [/\.vue$/],
-                },
             }],
             exclude: /node_modules/,
         }],
